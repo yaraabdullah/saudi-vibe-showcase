@@ -1,0 +1,1112 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Saudi Vibe Coding Program | Project Showcase</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-teal: #0d7377;
+            --primary-dark: #14213d;
+            --accent-gold: #fca311;
+            --accent-cyan: #32e0c4;
+            --bg-dark: #0a0a0f;
+            --bg-card: #12121a;
+            --bg-card-hover: #1a1a25;
+            --text-primary: #ffffff;
+            --text-secondary: #a0a0b0;
+            --gradient-1: linear-gradient(135deg, #0d7377 0%, #14a3a8 100%);
+            --gradient-2: linear-gradient(135deg, #fca311 0%, #ffcc5c 100%);
+            --gradient-hero: linear-gradient(180deg, #0a0a0f 0%, #0d1520 50%, #0a0a0f 100%);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Outfit', 'Cairo', sans-serif;
+            background: var(--bg-dark);
+            color: var(--text-primary);
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        /* Animated Background */
+        .bg-pattern {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            opacity: 0.4;
+            background-image: 
+                radial-gradient(circle at 20% 80%, rgba(13, 115, 119, 0.15) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(252, 163, 17, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 40% 40%, rgba(50, 224, 196, 0.08) 0%, transparent 40%);
+        }
+
+        .floating-shapes {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            overflow: hidden;
+            pointer-events: none;
+        }
+
+        .shape {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(60px);
+            animation: float 20s infinite ease-in-out;
+        }
+
+        .shape-1 {
+            width: 400px;
+            height: 400px;
+            background: rgba(13, 115, 119, 0.2);
+            top: -100px;
+            right: -100px;
+            animation-delay: 0s;
+        }
+
+        .shape-2 {
+            width: 300px;
+            height: 300px;
+            background: rgba(252, 163, 17, 0.15);
+            bottom: 20%;
+            left: -50px;
+            animation-delay: -5s;
+        }
+
+        .shape-3 {
+            width: 250px;
+            height: 250px;
+            background: rgba(50, 224, 196, 0.12);
+            top: 50%;
+            right: 20%;
+            animation-delay: -10s;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translate(0, 0) rotate(0deg); }
+            25% { transform: translate(30px, -30px) rotate(5deg); }
+            50% { transform: translate(-20px, 20px) rotate(-5deg); }
+            75% { transform: translate(20px, 10px) rotate(3deg); }
+        }
+
+        /* Header */
+        header {
+            padding: 1.5rem 2rem;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            background: rgba(10, 10, 15, 0.8);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .header-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logos {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .logo-container img {
+            height: 45px;
+            object-fit: contain;
+        }
+
+        .logo-divider {
+            width: 1px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.15);
+        }
+
+        nav ul {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        nav a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: color 0.3s ease;
+        }
+
+        nav a:hover {
+            color: var(--accent-cyan);
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 10rem 2rem 6rem;
+            text-align: center;
+            position: relative;
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.5rem 1.25rem;
+            background: rgba(13, 115, 119, 0.15);
+            border: 1px solid rgba(13, 115, 119, 0.3);
+            border-radius: 50px;
+            font-size: 0.85rem;
+            color: var(--accent-cyan);
+            margin-bottom: 1.5rem;
+            animation: fadeInUp 0.8s ease;
+        }
+
+        .hero-badge::before {
+            content: '';
+            width: 8px;
+            height: 8px;
+            background: var(--accent-cyan);
+            border-radius: 50%;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; transform: scale(1); }
+            50% { opacity: 0.5; transform: scale(1.2); }
+        }
+
+        .hero h1 {
+            font-size: clamp(2.5rem, 6vw, 4.5rem);
+            font-weight: 800;
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+            animation: fadeInUp 0.8s ease 0.1s backwards;
+        }
+
+        .hero h1 .highlight {
+            background: var(--gradient-1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero h1 .highlight-gold {
+            background: var(--gradient-2);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            color: var(--text-secondary);
+            max-width: 600px;
+            margin: 0 auto 2rem;
+            line-height: 1.7;
+            animation: fadeInUp 0.8s ease 0.2s backwards;
+        }
+
+        .hero-stats {
+            display: flex;
+            justify-content: center;
+            gap: 4rem;
+            margin-top: 3rem;
+            animation: fadeInUp 0.8s ease 0.3s backwards;
+        }
+
+        .stat {
+            text-align: center;
+        }
+
+        .stat-value {
+            font-size: 2.5rem;
+            font-weight: 800;
+            background: var(--gradient-1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .stat-label {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            margin-top: 0.25rem;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Filter Section */
+        .filter-section {
+            padding: 2rem;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .filter-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .filter-btn {
+            padding: 0.75rem 2rem;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            background: rgba(255, 255, 255, 0.03);
+            color: var(--text-secondary);
+            border-radius: 50px;
+            font-size: 0.95rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-family: inherit;
+        }
+
+        .filter-btn:hover {
+            border-color: var(--primary-teal);
+            color: var(--text-primary);
+            background: rgba(13, 115, 119, 0.1);
+        }
+
+        .filter-btn.active {
+            background: var(--gradient-1);
+            border-color: transparent;
+            color: white;
+        }
+
+        /* Projects Grid */
+        .projects-section {
+            padding: 3rem 2rem 6rem;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(380px, 1fr));
+            gap: 2rem;
+        }
+
+        /* Project Card */
+        .project-card {
+            background: var(--bg-card);
+            border-radius: 20px;
+            padding: 2rem;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+            animation: fadeInUp 0.6s ease backwards;
+        }
+
+        .project-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: var(--gradient-1);
+            transform: scaleX(0);
+            transition: transform 0.4s ease;
+        }
+
+        .project-card:hover {
+            transform: translateY(-8px);
+            border-color: rgba(13, 115, 119, 0.3);
+            background: var(--bg-card-hover);
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+        }
+
+        .project-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 1.5rem;
+        }
+
+        .track-badge {
+            padding: 0.4rem 1rem;
+            border-radius: 50px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .track-badge.coders {
+            background: rgba(252, 163, 17, 0.15);
+            color: #ffc857;
+            border: 1px solid rgba(252, 163, 17, 0.3);
+        }
+
+        .track-badge.non-coders {
+            background: rgba(50, 224, 196, 0.15);
+            color: #32e0c4;
+            border: 1px solid rgba(50, 224, 196, 0.3);
+        }
+
+        .project-icon {
+            width: 50px;
+            height: 50px;
+            border-radius: 12px;
+            background: rgba(13, 115, 119, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+        }
+
+        .project-name {
+            font-size: 1.35rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            color: var(--text-primary);
+            line-height: 1.3;
+        }
+
+        .participant-name {
+            font-size: 1rem;
+            color: var(--text-secondary);
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .participant-name::before {
+            content: '';
+            width: 24px;
+            height: 24px;
+            background: linear-gradient(135deg, var(--primary-teal), var(--accent-cyan));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .project-domain {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.5rem 1rem;
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 8px;
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            margin-bottom: 1.5rem;
+        }
+
+        .project-domain svg {
+            width: 16px;
+            height: 16px;
+            opacity: 0.7;
+        }
+
+        .view-project-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 0.875rem 1.5rem;
+            background: var(--gradient-1);
+            color: white;
+            text-decoration: none;
+            border-radius: 12px;
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: all 0.3s ease;
+            width: 100%;
+            justify-content: center;
+        }
+
+        .view-project-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px -10px rgba(13, 115, 119, 0.5);
+        }
+
+        .view-project-btn svg {
+            width: 18px;
+            height: 18px;
+            transition: transform 0.3s ease;
+        }
+
+        .view-project-btn:hover svg {
+            transform: translateX(4px);
+        }
+
+        .view-project-btn.disabled {
+            background: rgba(255, 255, 255, 0.05);
+            color: var(--text-secondary);
+            cursor: not-allowed;
+        }
+
+        .view-project-btn.disabled:hover {
+            transform: none;
+            box-shadow: none;
+        }
+
+        /* Footer */
+        footer {
+            padding: 4rem 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            text-align: center;
+            background: rgba(0, 0, 0, 0.3);
+        }
+
+        .footer-content {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .footer-logos {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 3rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-logos img {
+            height: 50px;
+            opacity: 0.8;
+            transition: opacity 0.3s ease;
+        }
+
+        .footer-logos img:hover {
+            opacity: 1;
+        }
+
+        .footer-text {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+
+        .footer-text a {
+            color: var(--accent-cyan);
+            text-decoration: none;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            header {
+                padding: 1rem;
+            }
+
+            .logos {
+                gap: 1rem;
+            }
+
+            .logo-container img {
+                height: 35px;
+            }
+
+            nav {
+                display: none;
+            }
+
+            .hero {
+                padding: 8rem 1.5rem 4rem;
+            }
+
+            .hero-stats {
+                gap: 2rem;
+            }
+
+            .stat-value {
+                font-size: 2rem;
+            }
+
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .filter-buttons {
+                gap: 0.5rem;
+            }
+
+            .filter-btn {
+                padding: 0.6rem 1.25rem;
+                font-size: 0.85rem;
+            }
+        }
+
+        /* Animation delays for cards */
+        .project-card:nth-child(1) { animation-delay: 0.1s; }
+        .project-card:nth-child(2) { animation-delay: 0.15s; }
+        .project-card:nth-child(3) { animation-delay: 0.2s; }
+        .project-card:nth-child(4) { animation-delay: 0.25s; }
+        .project-card:nth-child(5) { animation-delay: 0.3s; }
+        .project-card:nth-child(6) { animation-delay: 0.35s; }
+        .project-card:nth-child(7) { animation-delay: 0.4s; }
+        .project-card:nth-child(8) { animation-delay: 0.45s; }
+        .project-card:nth-child(9) { animation-delay: 0.5s; }
+        .project-card:nth-child(10) { animation-delay: 0.55s; }
+        .project-card:nth-child(11) { animation-delay: 0.6s; }
+        .project-card:nth-child(12) { animation-delay: 0.65s; }
+        .project-card:nth-child(13) { animation-delay: 0.7s; }
+        .project-card:nth-child(14) { animation-delay: 0.75s; }
+        .project-card:nth-child(15) { animation-delay: 0.8s; }
+
+        .hidden {
+            display: none !important;
+        }
+    </style>
+</head>
+<body>
+    <div class="bg-pattern"></div>
+    <div class="floating-shapes">
+        <div class="shape shape-1"></div>
+        <div class="shape shape-2"></div>
+        <div class="shape shape-3"></div>
+    </div>
+
+    <header>
+        <div class="header-content">
+            <div class="logos">
+                <div class="logo-container">
+                    <!-- AI Association Logo -->
+                    <svg width="45" height="45" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect width="100" height="100" rx="12" fill="#0d4f6e"/>
+                        <path d="M25 75V45L45 25H55V55H75V75H55V55H45V75H25Z" fill="url(#grad1)"/>
+                        <path d="M75 25V55H55V25H75Z" fill="url(#grad2)"/>
+                        <defs>
+                            <linearGradient id="grad1" x1="25" y1="25" x2="75" y2="75" gradientUnits="userSpaceOnUse">
+                                <stop stop-color="#14a3a8"/>
+                                <stop offset="1" stop-color="#0d7377"/>
+                            </linearGradient>
+                            <linearGradient id="grad2" x1="55" y1="25" x2="75" y2="55" gradientUnits="userSpaceOnUse">
+                                <stop stop-color="#32e0c4"/>
+                                <stop offset="1" stop-color="#14a3a8"/>
+                            </linearGradient>
+                        </defs>
+                    </svg>
+                    <span style="font-weight: 700; font-size: 1rem; color: #fff;">AI Association</span>
+                </div>
+                <div class="logo-divider"></div>
+                <div class="logo-container">
+                    <!-- Bilytica Logo -->
+                    <svg width="45" height="45" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <text x="5" y="55" font-family="Arial Black, sans-serif" font-size="32" font-weight="900" fill="#fff">BIL</text>
+                        <rect x="70" y="60" width="8" height="20" fill="#0078d4"/>
+                        <rect x="80" y="50" width="8" height="30" fill="#4caf50"/>
+                        <rect x="90" y="35" width="8" height="45" fill="#ffb300"/>
+                    </svg>
+                    <span style="font-weight: 700; font-size: 1rem; color: #fff;">Bilytica</span>
+                </div>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="https://docs.google.com/spreadsheets/d/1RHOrjSt0WjWTGjIkB2spbdbkZzwVBuXKLOZ2zkH9wqM/edit?usp=sharing" target="_blank">Submissions</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="hero-badge">
+            <span>Saudi Vibe Coding Program 2025</span>
+        </div>
+        <h1>
+            Innovative Projects by<br>
+            <span class="highlight">Saudi</span> <span class="highlight-gold">Tech Talents</span>
+        </h1>
+        <p>
+            Discover amazing projects built by participants of the Saudi Vibe Coding Program, 
+            powered by AI Association and Bilytica.
+        </p>
+        <div class="hero-stats">
+            <div class="stat">
+                <div class="stat-value">15+</div>
+                <div class="stat-label">Projects</div>
+            </div>
+            <div class="stat">
+                <div class="stat-value">2</div>
+                <div class="stat-label">Tracks</div>
+            </div>
+            <div class="stat">
+                <div class="stat-value">12+</div>
+                <div class="stat-label">Participants</div>
+            </div>
+        </div>
+    </section>
+
+    <section class="filter-section" id="projects">
+        <div class="filter-buttons">
+            <button class="filter-btn active" data-filter="all">All Projects</button>
+            <button class="filter-btn" data-filter="coders">Coders Track</button>
+            <button class="filter-btn" data-filter="non-coders">Non-Coders Track</button>
+        </div>
+    </section>
+
+    <section class="projects-section">
+        <div class="projects-grid">
+            
+            <!-- Project 1 -->
+            <div class="project-card" data-track="non-coders">
+                <div class="card-header">
+                    <div class="project-icon">🏙️</div>
+                    <span class="track-badge non-coders">Non-Coders</span>
+                </div>
+                <h3 class="project-name">City Access Buddy</h3>
+                <p class="participant-name">Dr. Nour Bashabsheh</p>
+                <div class="project-domain">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+                    </svg>
+                    Smart City & Accessibility
+                </div>
+                <a href="https://city-access-buddy.lovable.app/" target="_blank" class="view-project-btn">
+                    View Project
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                    </svg>
+                </a>
+            </div>
+
+            <!-- Project 2 -->
+            <div class="project-card" data-track="non-coders">
+                <div class="card-header">
+                    <div class="project-icon">📋</div>
+                    <span class="track-badge non-coders">Non-Coders</span>
+                </div>
+                <h3 class="project-name">Project Management App</h3>
+                <p class="participant-name">Sameeh Mazen Jarrar</p>
+                <div class="project-domain">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" />
+                    </svg>
+                    Productivity & Management
+                </div>
+                <a href="https://lovable.dev/projects/070453b6-95d5-4196-8db9-818b18afa2bf" target="_blank" class="view-project-btn">
+                    View Project
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                    </svg>
+                </a>
+            </div>
+
+            <!-- Project 3 -->
+            <div class="project-card" data-track="coders">
+                <div class="card-header">
+                    <div class="project-icon">💻</div>
+                    <span class="track-badge coders">Coders</span>
+                </div>
+                <h3 class="project-name">Developer Project</h3>
+                <p class="participant-name">منصور الربيعي</p>
+                <div class="project-domain">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
+                    </svg>
+                    Software Development
+                </div>
+                <a href="https://drive.google.com/drive/folders/1vvotDoZE-D117IjMXtKHgRJHZPv9wmcw?usp=sharing" target="_blank" class="view-project-btn">
+                    View Project
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                    </svg>
+                </a>
+            </div>
+
+            <!-- Project 4 -->
+            <div class="project-card" data-track="coders">
+                <div class="card-header">
+                    <div class="project-icon">✨</div>
+                    <span class="track-badge coders">Coders</span>
+                </div>
+                <h3 class="project-name">Sparkle Tasks</h3>
+                <p class="participant-name">Abdullah Alghashmari</p>
+                <div class="project-domain">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4" />
+                    </svg>
+                    Task Management
+                </div>
+                <a href="https://demo-sparkle-tasks.lovable.app" target="_blank" class="view-project-btn">
+                    View Project
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                    </svg>
+                </a>
+            </div>
+
+            <!-- Project 5 -->
+            <div class="project-card" data-track="coders">
+                <div class="card-header">
+                    <div class="project-icon">🤝</div>
+                    <span class="track-badge coders">Coders</span>
+                </div>
+                <h3 class="project-name">Volunteer Work Platform</h3>
+                <p class="participant-name">بدريه مطلق حسين العتيبي</p>
+                <div class="project-domain">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+                    </svg>
+                    Community & Volunteering
+                </div>
+                <span class="view-project-btn disabled">
+                    Project Pending
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                </span>
+            </div>
+
+            <!-- Project 6 -->
+            <div class="project-card" data-track="non-coders">
+                <div class="card-header">
+                    <div class="project-icon">👁️</div>
+                    <span class="track-badge non-coders">Non-Coders</span>
+                </div>
+                <h3 class="project-name">Intel City Watch</h3>
+                <p class="participant-name">Laila M. Alahaideb</p>
+                <div class="project-domain">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                    </svg>
+                    Security & Surveillance
+                </div>
+                <a href="https://intel-city-watch.lovable.app" target="_blank" class="view-project-btn">
+                    View Project
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                    </svg>
+                </a>
+            </div>
+
+            <!-- Project 7 -->
+            <div class="project-card" data-track="coders">
+                <div class="card-header">
+                    <div class="project-icon">👥</div>
+                    <span class="track-badge coders">Coders</span>
+                </div>
+                <h3 class="project-name">CT Community</h3>
+                <p class="participant-name">علي بن أحمد عيسى دغري</p>
+                <div class="project-domain">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+                    </svg>
+                    Community Platform
+                </div>
+                <a href="https://ctcommunity.lovable.app" target="_blank" class="view-project-btn">
+                    View Project
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                    </svg>
+                </a>
+            </div>
+
+            <!-- Project 8 -->
+            <div class="project-card" data-track="non-coders">
+                <div class="card-header">
+                    <div class="project-icon">🏠</div>
+                    <span class="track-badge non-coders">Non-Coders</span>
+                </div>
+                <h3 class="project-name">PropWise</h3>
+                <p class="participant-name">Khalid M. Saeed</p>
+                <div class="project-domain">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
+                    </svg>
+                    Real Estate & Property
+                </div>
+                <a href="https://lovable-prop-wise.lovable.app" target="_blank" class="view-project-btn">
+                    View Project
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                    </svg>
+                </a>
+            </div>
+
+            <!-- Project 9 -->
+            <div class="project-card" data-track="coders">
+                <div class="card-header">
+                    <div class="project-icon">🔧</div>
+                    <span class="track-badge coders">Coders</span>
+                </div>
+                <h3 class="project-name">Developer Project</h3>
+                <p class="participant-name">Noha Alduaiji</p>
+                <div class="project-domain">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
+                    </svg>
+                    Software Development
+                </div>
+                <a href="https://drive.google.com/drive/folders/1ztLa0B9JfBh2qHS8GzeJDrk5E4n_RehV?usp=sharing" target="_blank" class="view-project-btn">
+                    View Project
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                    </svg>
+                </a>
+            </div>
+
+            <!-- Project 10 -->
+            <div class="project-card" data-track="non-coders">
+                <div class="card-header">
+                    <div class="project-icon">🩺</div>
+                    <span class="track-badge non-coders">Non-Coders</span>
+                </div>
+                <h3 class="project-name">CXR Insight</h3>
+                <p class="participant-name">Abdulaziz Othman</p>
+                <div class="project-domain">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                    </svg>
+                    Healthcare & Medical AI
+                </div>
+                <a href="https://lovable-cxr-insight.lovable.app" target="_blank" class="view-project-btn">
+                    View Project
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                    </svg>
+                </a>
+            </div>
+
+            <!-- Project 11 -->
+            <div class="project-card" data-track="coders">
+                <div class="card-header">
+                    <div class="project-icon">🔐</div>
+                    <span class="track-badge coders">Coders</span>
+                </div>
+                <h3 class="project-name">City-Wide Security Operations</h3>
+                <p class="participant-name">Laila M. Alahaideb</p>
+                <div class="project-domain">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                    </svg>
+                    Security & Operations
+                </div>
+                <a href="https://city-wide-security-operations.vercel.app/" target="_blank" class="view-project-btn">
+                    View Project
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                    </svg>
+                </a>
+            </div>
+
+            <!-- Project 12 -->
+            <div class="project-card" data-track="non-coders">
+                <div class="card-header">
+                    <div class="project-icon">💊</div>
+                    <span class="track-badge non-coders">Non-Coders</span>
+                </div>
+                <h3 class="project-name">Safe Prescribe AI</h3>
+                <p class="participant-name">Roaa A. Alsofyani</p>
+                <div class="project-domain">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" />
+                    </svg>
+                    Healthcare & AI
+                </div>
+                <a href="https://github.com/R0aaS0fyani/safe-prescribe-ai" target="_blank" class="view-project-btn">
+                    View Project
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                    </svg>
+                </a>
+            </div>
+
+            <!-- Project 13 -->
+            <div class="project-card" data-track="non-coders">
+                <div class="card-header">
+                    <div class="project-icon">✅</div>
+                    <span class="track-badge non-coders">Non-Coders</span>
+                </div>
+                <h3 class="project-name">AI Quality Sync</h3>
+                <p class="participant-name">رغد عمار علي</p>
+                <div class="project-domain">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                    Quality Assurance & AI
+                </div>
+                <a href="https://ai-quality-sync.lovable.app" target="_blank" class="view-project-btn">
+                    View Project
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                    </svg>
+                </a>
+            </div>
+
+            <!-- Project 14 -->
+            <div class="project-card" data-track="non-coders">
+                <div class="card-header">
+                    <div class="project-icon">🧩</div>
+                    <span class="track-badge non-coders">Non-Coders</span>
+                </div>
+                <h3 class="project-name">Puzzle Prism Math</h3>
+                <p class="participant-name">Afnan Khalid Mofty</p>
+                <div class="project-domain">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+                    </svg>
+                    Education & Math
+                </div>
+                <a href="https://puzzle-prism-math.lovable.app/" target="_blank" class="view-project-btn">
+                    View Project
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                    </svg>
+                </a>
+            </div>
+
+            <!-- Project 15 -->
+            <div class="project-card" data-track="non-coders">
+                <div class="card-header">
+                    <div class="project-icon">🗺️</div>
+                    <span class="track-badge non-coders">Non-Coders</span>
+                </div>
+                <h3 class="project-name">Quest Saudi Explorer</h3>
+                <p class="participant-name">Bushra Ali Alshehri</p>
+                <div class="project-domain">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                    Tourism & Exploration
+                </div>
+                <a href="https://quest-saudi-explorer.lovable.app" target="_blank" class="view-project-btn">
+                    View Project
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                    </svg>
+                </a>
+            </div>
+
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-logos">
+                <!-- AI Association Logo -->
+                <svg width="60" height="60" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect width="100" height="100" rx="12" fill="#0d4f6e"/>
+                    <path d="M25 75V45L45 25H55V55H75V75H55V55H45V75H25Z" fill="url(#grad3)"/>
+                    <path d="M75 25V55H55V25H75Z" fill="url(#grad4)"/>
+                    <defs>
+                        <linearGradient id="grad3" x1="25" y1="25" x2="75" y2="75" gradientUnits="userSpaceOnUse">
+                            <stop stop-color="#14a3a8"/>
+                            <stop offset="1" stop-color="#0d7377"/>
+                        </linearGradient>
+                        <linearGradient id="grad4" x1="55" y1="25" x2="75" y2="55" gradientUnits="userSpaceOnUse">
+                            <stop stop-color="#32e0c4"/>
+                            <stop offset="1" stop-color="#14a3a8"/>
+                        </linearGradient>
+                    </defs>
+                </svg>
+                <!-- Bilytica Logo -->
+                <svg width="120" height="40" viewBox="0 0 200 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <text x="0" y="38" font-family="Arial Black, sans-serif" font-size="32" font-weight="900" fill="#ffffff">BILYTICA</text>
+                    <rect x="165" y="30" width="6" height="15" fill="#0078d4"/>
+                    <rect x="173" y="22" width="6" height="23" fill="#4caf50"/>
+                    <rect x="181" y="14" width="6" height="31" fill="#ffb300"/>
+                    <rect x="189" y="6" width="6" height="39" fill="#f44336"/>
+                </svg>
+            </div>
+            <p class="footer-text">
+                © 2025 Saudi Vibe Coding Program. Powered by <a href="#">AI Association</a> & <a href="#">Bilytica</a>
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        // Filter functionality
+        const filterBtns = document.querySelectorAll('.filter-btn');
+        const projectCards = document.querySelectorAll('.project-card');
+
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                // Update active button
+                filterBtns.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+
+                const filter = btn.dataset.filter;
+
+                projectCards.forEach(card => {
+                    if (filter === 'all') {
+                        card.classList.remove('hidden');
+                    } else {
+                        if (card.dataset.track === filter) {
+                            card.classList.remove('hidden');
+                        } else {
+                            card.classList.add('hidden');
+                        }
+                    }
+                });
+            });
+        });
+
+        // Smooth scroll for navigation
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Add animation on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        projectCards.forEach(card => {
+            card.style.opacity = '0';
+            card.style.transform = 'translateY(30px)';
+            card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(card);
+        });
+    </script>
+</body>
+</html>
+
