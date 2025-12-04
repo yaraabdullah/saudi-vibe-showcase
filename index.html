@@ -155,6 +155,22 @@
             object-fit: contain;
         }
 
+        .logo-img {
+            height: 50px;
+            object-fit: contain;
+        }
+
+        .footer-logo-img {
+            height: 60px;
+            object-fit: contain;
+            opacity: 0.9;
+            transition: opacity 0.3s ease;
+        }
+
+        .footer-logo-img:hover {
+            opacity: 1;
+        }
+
         .logo-divider {
             width: 1px;
             height: 40px;
@@ -676,34 +692,11 @@
         <div class="header-content">
             <div class="logos">
                 <div class="logo-container">
-                    <!-- AI Association Logo -->
-                    <svg width="45" height="45" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <rect width="100" height="100" rx="12" fill="#0d4f6e"/>
-                        <path d="M25 75V45L45 25H55V55H75V75H55V55H45V75H25Z" fill="url(#grad1)"/>
-                        <path d="M75 25V55H55V25H75Z" fill="url(#grad2)"/>
-                        <defs>
-                            <linearGradient id="grad1" x1="25" y1="25" x2="75" y2="75" gradientUnits="userSpaceOnUse">
-                                <stop stop-color="#14a3a8"/>
-                                <stop offset="1" stop-color="#0d7377"/>
-                            </linearGradient>
-                            <linearGradient id="grad2" x1="55" y1="25" x2="75" y2="55" gradientUnits="userSpaceOnUse">
-                                <stop stop-color="#32e0c4"/>
-                                <stop offset="1" stop-color="#14a3a8"/>
-                            </linearGradient>
-                        </defs>
-                    </svg>
-                    <span style="font-weight: 700; font-size: 1rem; color: #fff;" data-en="AI Association" data-ar="جمعية الذكاء الاصطناعي">AI Association</span>
+                    <img src="logos/AI Association.png" alt="AI Association" class="logo-img">
                 </div>
                 <div class="logo-divider"></div>
                 <div class="logo-container">
-                    <!-- Bilytica Logo -->
-                    <svg width="45" height="45" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <text x="5" y="55" font-family="Arial Black, sans-serif" font-size="32" font-weight="900" fill="#fff">BIL</text>
-                        <rect x="70" y="60" width="8" height="20" fill="#0078d4"/>
-                        <rect x="80" y="50" width="8" height="30" fill="#4caf50"/>
-                        <rect x="90" y="35" width="8" height="45" fill="#ffb300"/>
-                    </svg>
-                    <span style="font-weight: 700; font-size: 1rem; color: #fff;">Bilytica</span>
+                    <img src="logos/Bilytica.png" alt="Bilytica" class="logo-img">
                 </div>
             </div>
             <div class="header-right">
@@ -1096,30 +1089,8 @@
     <footer>
         <div class="footer-content">
             <div class="footer-logos">
-                <!-- AI Association Logo -->
-                <svg width="60" height="60" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <rect width="100" height="100" rx="12" fill="#0d4f6e"/>
-                    <path d="M25 75V45L45 25H55V55H75V75H55V55H45V75H25Z" fill="url(#grad3)"/>
-                    <path d="M75 25V55H55V25H75Z" fill="url(#grad4)"/>
-                    <defs>
-                        <linearGradient id="grad3" x1="25" y1="25" x2="75" y2="75" gradientUnits="userSpaceOnUse">
-                            <stop stop-color="#14a3a8"/>
-                            <stop offset="1" stop-color="#0d7377"/>
-                        </linearGradient>
-                        <linearGradient id="grad4" x1="55" y1="25" x2="75" y2="55" gradientUnits="userSpaceOnUse">
-                            <stop stop-color="#32e0c4"/>
-                            <stop offset="1" stop-color="#14a3a8"/>
-                        </linearGradient>
-                    </defs>
-                </svg>
-                <!-- Bilytica Logo -->
-                <svg width="120" height="40" viewBox="0 0 200 50" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <text x="0" y="38" font-family="Arial Black, sans-serif" font-size="32" font-weight="900" fill="#ffffff">BILYTICA</text>
-                    <rect x="165" y="30" width="6" height="15" fill="#0078d4"/>
-                    <rect x="173" y="22" width="6" height="23" fill="#4caf50"/>
-                    <rect x="181" y="14" width="6" height="31" fill="#ffb300"/>
-                    <rect x="189" y="6" width="6" height="39" fill="#f44336"/>
-                </svg>
+                <img src="logos/AI Association.png" alt="AI Association" class="footer-logo-img">
+                <img src="logos/Bilytica.png" alt="Bilytica" class="footer-logo-img">
             </div>
             <p class="footer-text">
                 <span data-en="© 2025 Saudi Vibe Coding Program. Powered by" data-ar="© 2025 برنامج سعودي فايب للبرمجة. بدعم من">© 2025 Saudi Vibe Coding Program. Powered by</span> 
