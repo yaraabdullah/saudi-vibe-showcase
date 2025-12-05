@@ -9,18 +9,18 @@
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
         :root {
-            --primary-teal: #0d7377;
-            --primary-dark: #14213d;
-            --accent-gold: #fca311;
-            --accent-cyan: #32e0c4;
-            --bg-dark: #0a0a0f;
-            --bg-card: #12121a;
-            --bg-card-hover: #1a1a25;
+            --primary-teal: #22A599;
+            --primary-dark: #08223F;
+            --accent-blue: #00A8DF;
+            --accent-navy: #044869;
+            --bg-dark: #08223F;
+            --bg-card: #0a2d4a;
+            --bg-card-hover: #0d3a5c;
             --text-primary: #ffffff;
-            --text-secondary: #a0a0b0;
-            --gradient-1: linear-gradient(135deg, #0d7377 0%, #14a3a8 100%);
-            --gradient-2: linear-gradient(135deg, #fca311 0%, #ffcc5c 100%);
-            --gradient-hero: linear-gradient(180deg, #0a0a0f 0%, #0d1520 50%, #0a0a0f 100%);
+            --text-secondary: #a8c5d8;
+            --gradient-1: linear-gradient(135deg, #22A599 0%, #00A8DF 100%);
+            --gradient-2: linear-gradient(135deg, #00A8DF 0%, #22A599 100%);
+            --gradient-hero: linear-gradient(180deg, #08223F 0%, #044869 50%, #08223F 100%);
         }
 
         * {
@@ -60,9 +60,9 @@
             z-index: -1;
             opacity: 0.4;
             background-image: 
-                radial-gradient(circle at 20% 80%, rgba(13, 115, 119, 0.15) 0%, transparent 50%),
-                radial-gradient(circle at 80% 20%, rgba(252, 163, 17, 0.1) 0%, transparent 50%),
-                radial-gradient(circle at 40% 40%, rgba(50, 224, 196, 0.08) 0%, transparent 40%);
+                radial-gradient(circle at 20% 80%, rgba(34, 165, 153, 0.2) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(0, 168, 223, 0.15) 0%, transparent 50%),
+                radial-gradient(circle at 40% 40%, rgba(4, 72, 105, 0.2) 0%, transparent 40%);
         }
 
         .floating-shapes {
@@ -86,7 +86,7 @@
         .shape-1 {
             width: 400px;
             height: 400px;
-            background: rgba(13, 115, 119, 0.2);
+            background: rgba(34, 165, 153, 0.25);
             top: -100px;
             right: -100px;
             animation-delay: 0s;
@@ -95,7 +95,7 @@
         .shape-2 {
             width: 300px;
             height: 300px;
-            background: rgba(252, 163, 17, 0.15);
+            background: rgba(0, 168, 223, 0.2);
             bottom: 20%;
             left: -50px;
             animation-delay: -5s;
@@ -104,7 +104,7 @@
         .shape-3 {
             width: 250px;
             height: 250px;
-            background: rgba(50, 224, 196, 0.12);
+            background: rgba(4, 72, 105, 0.25);
             top: 50%;
             right: 20%;
             animation-delay: -10s;
@@ -120,14 +120,12 @@
         /* Header */
         header {
             padding: 1.5rem 2rem;
-            position: fixed;
+            position: absolute;
             top: 0;
             left: 0;
             right: 0;
             z-index: 1000;
-            background: rgba(10, 10, 15, 0.8);
-            backdrop-filter: blur(20px);
-            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            background: transparent;
         }
 
         .header-content {
@@ -160,6 +158,17 @@
             object-fit: contain;
         }
 
+        .logo-ai {
+            height: 90px !important;
+        }
+
+        .logo-bilytica {
+            height: 55px !important;
+            object-fit: cover;
+            object-position: right center;
+            margin-left: -30px;
+        }
+
         .footer-logo-img {
             height: 60px;
             object-fit: contain;
@@ -169,6 +178,16 @@
 
         .footer-logo-img:hover {
             opacity: 1;
+        }
+
+        .footer-logo-ai {
+            height: 120px !important;
+        }
+
+        .footer-logo-bilytica {
+            object-fit: cover;
+            object-position: right center;
+            margin-left: -25px;
         }
 
         .logo-divider {
@@ -198,7 +217,7 @@
         }
 
         nav a:hover {
-            color: var(--accent-cyan);
+            color: #22A599;
         }
 
         /* Language Switcher */
@@ -246,11 +265,11 @@
             align-items: center;
             gap: 0.5rem;
             padding: 0.5rem 1.25rem;
-            background: rgba(13, 115, 119, 0.15);
-            border: 1px solid rgba(13, 115, 119, 0.3);
+            background: rgba(34, 165, 153, 0.15);
+            border: 1px solid rgba(34, 165, 153, 0.3);
             border-radius: 50px;
             font-size: 0.85rem;
-            color: var(--accent-cyan);
+            color: #22A599;
             margin-bottom: 1.5rem;
             animation: fadeInUp 0.8s ease;
         }
@@ -259,7 +278,7 @@
             content: '';
             width: 8px;
             height: 8px;
-            background: var(--accent-cyan);
+            background: #22A599;
             border-radius: 50%;
             animation: pulse 2s infinite;
         }
@@ -368,7 +387,7 @@
         .filter-btn:hover {
             border-color: var(--primary-teal);
             color: var(--text-primary);
-            background: rgba(13, 115, 119, 0.1);
+            background: rgba(34, 165, 153, 0.1);
         }
 
         .filter-btn.active {
@@ -416,7 +435,7 @@
 
         .project-card:hover {
             transform: translateY(-8px);
-            border-color: rgba(13, 115, 119, 0.3);
+            border-color: rgba(34, 165, 153, 0.3);
             background: var(--bg-card-hover);
             box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
         }
@@ -442,22 +461,22 @@
         }
 
         .track-badge.coders {
-            background: rgba(252, 163, 17, 0.15);
-            color: #ffc857;
-            border: 1px solid rgba(252, 163, 17, 0.3);
+            background: rgba(0, 168, 223, 0.15);
+            color: #00A8DF;
+            border: 1px solid rgba(0, 168, 223, 0.3);
         }
 
         .track-badge.non-coders {
-            background: rgba(50, 224, 196, 0.15);
-            color: #32e0c4;
-            border: 1px solid rgba(50, 224, 196, 0.3);
+            background: rgba(34, 165, 153, 0.15);
+            color: #22A599;
+            border: 1px solid rgba(34, 165, 153, 0.3);
         }
 
         .project-icon {
             width: 50px;
             height: 50px;
             border-radius: 12px;
-            background: rgba(13, 115, 119, 0.1);
+            background: rgba(34, 165, 153, 0.15);
             display: flex;
             align-items: center;
             justify-content: center;
@@ -485,7 +504,7 @@
             content: '';
             width: 24px;
             height: 24px;
-            background: linear-gradient(135deg, var(--primary-teal), var(--accent-cyan));
+            background: linear-gradient(135deg, #22A599, #00A8DF);
             border-radius: 50%;
             display: flex;
             align-items: center;
@@ -511,12 +530,12 @@
             opacity: 0.7;
         }
 
-        /* Domain Colors */
-        .domain-healthcare { background: rgba(239, 68, 68, 0.1); color: #f87171; }
-        .domain-smart-cities { background: rgba(59, 130, 246, 0.1); color: #60a5fa; }
-        .domain-education { background: rgba(168, 85, 247, 0.1); color: #c084fc; }
-        .domain-business { background: rgba(34, 197, 94, 0.1); color: #4ade80; }
-        .domain-voluntary-work { background: rgba(251, 191, 36, 0.1); color: #fbbf24; }
+        /* Domain Colors - AI Association Theme */
+        .domain-healthcare { background: rgba(239, 68, 68, 0.15); color: #f87171; }
+        .domain-smart-cities { background: rgba(0, 168, 223, 0.15); color: #00A8DF; }
+        .domain-education { background: rgba(34, 165, 153, 0.15); color: #22A599; }
+        .domain-business { background: rgba(4, 72, 105, 0.2); color: #5db8d9; }
+        .domain-voluntary-work { background: rgba(251, 191, 36, 0.15); color: #fbbf24; }
 
         .view-project-btn {
             display: inline-flex;
@@ -536,7 +555,7 @@
 
         .view-project-btn:hover {
             transform: translateY(-2px);
-            box-shadow: 0 10px 30px -10px rgba(13, 115, 119, 0.5);
+            box-shadow: 0 10px 30px -10px rgba(34, 165, 153, 0.5);
         }
 
         .view-project-btn svg {
@@ -597,8 +616,12 @@
         }
 
         .footer-text a {
-            color: var(--accent-cyan);
+            color: #22A599;
             text-decoration: none;
+        }
+
+        .footer-text a:hover {
+            color: #00A8DF;
         }
 
         /* Responsive */
@@ -692,20 +715,14 @@
         <div class="header-content">
             <div class="logos">
                 <div class="logo-container">
-                    <img src="logos/AI Association.png" alt="AI Association" class="logo-img">
+                    <img src="logos/AI Association.png" alt="AI Association" class="logo-img logo-ai">
                 </div>
                 <div class="logo-divider"></div>
                 <div class="logo-container">
-                    <img src="logos/Bilytica.png" alt="Bilytica" class="logo-img">
+                    <img src="logos/Bilytica.png" alt="Bilytica" class="logo-img logo-bilytica">
                 </div>
             </div>
             <div class="header-right">
-                <nav>
-                    <ul>
-                        <li><a href="#projects" data-en="Projects" data-ar="المشاريع">Projects</a></li>
-                        <li><a href="https://docs.google.com/spreadsheets/d/1RHOrjSt0WjWTGjIkB2spbdbkZzwVBuXKLOZ2zkH9wqM/edit?usp=sharing" target="_blank" data-en="Submissions" data-ar="التقديمات">Submissions</a></li>
-                    </ul>
-                </nav>
                 <div class="lang-switcher">
                     <button class="lang-btn active" data-lang="en">EN</button>
                     <button class="lang-btn" data-lang="ar">عربي</button>
@@ -716,13 +733,13 @@
 
     <section class="hero">
         <div class="hero-badge">
-            <span data-en="Saudi Vibe Coding Program 2025" data-ar="برنامج سعودي فايب للبرمجة 2025">Saudi Vibe Coding Program 2025</span>
+            <span data-en="Saudi Vibe Coding Program 2025" data-ar="برنامج البرمجة التوليدية">Saudi Vibe Coding Program 2025</span>
         </div>
         <h1>
             <span data-en="Innovative Projects by" data-ar="مشاريع مبتكرة من">Innovative Projects by</span><br>
             <span class="highlight" data-en="Saudi" data-ar="المواهب">Saudi</span> <span class="highlight-gold" data-en="Tech Talents" data-ar="التقنية السعودية">Tech Talents</span>
         </h1>
-        <p data-en="Discover amazing projects built by participants of the Saudi Vibe Coding Program, powered by AI Association and Bilytica." data-ar="اكتشف المشاريع المذهلة التي بناها المشاركون في برنامج سعودي فايب للبرمجة، بدعم من جمعية الذكاء الاصطناعي وبيليتيكا.">
+        <p data-en="Discover amazing projects built by participants of the Saudi Vibe Coding Program, powered by AI Association and Bilytica." data-ar="اكتشف المشاريع المذهلة التي بناها المشاركون في برنامج البرمجة التوليدية بدعم من جمعية الذكاء الاصطناعي وشركة بيليتيكا.">
             Discover amazing projects built by participants of the Saudi Vibe Coding Program, 
             powered by AI Association and Bilytica.
         </p>
@@ -736,7 +753,7 @@
                 <div class="stat-label" data-en="Tracks" data-ar="مسار">Tracks</div>
             </div>
             <div class="stat">
-                <div class="stat-value">12+</div>
+                <div class="stat-value">100+</div>
                 <div class="stat-label" data-en="Participants" data-ar="مشارك">Participants</div>
             </div>
         </div>
@@ -760,7 +777,7 @@
                     <span class="track-badge non-coders" data-en="Non-Coders" data-ar="غير مبرمجين">Non-Coders</span>
                 </div>
                 <h3 class="project-name" data-en="City Access Buddy" data-ar="مساعد الوصول للمدينة">City Access Buddy</h3>
-                <p class="participant-name">Dr. Nour Bashabsheh</p>
+                <p class="participant-name" data-ar="د. نور بشابشه" data-en="Dr. Nour Bashabsheh">Dr. Nour Bashabsheh</p>
                 <div class="project-domain domain-smart-cities">
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
@@ -781,8 +798,8 @@
                     <div class="project-icon">📋</div>
                     <span class="track-badge non-coders" data-en="Non-Coders" data-ar="غير مبرمجين">Non-Coders</span>
                 </div>
-                <h3 class="project-name" data-en="Project Management App" data-ar="تطبيق إدارة المشاريع">Project Management App</h3>
-                <p class="participant-name">Sameeh Mazen Jarrar</p>
+                <h3 class="project-name" data-en="Delivery Route Optimizer" data-ar="تحسين مسارات التوصيل">Delivery Route Optimizer</h3>
+                <p class="participant-name" data-ar="سميح مازن" data-en="Sameeh Mazen Jarrar">Sameeh Mazen</p>
                 <div class="project-domain domain-business">
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
@@ -803,13 +820,13 @@
                     <div class="project-icon">💻</div>
                     <span class="track-badge coders" data-en="Coders" data-ar="مبرمجين">Coders</span>
                 </div>
-                <h3 class="project-name" data-en="Developer Project" data-ar="مشروع تطوير برمجي">Developer Project</h3>
-                <p class="participant-name">منصور الربيعي</p>
+                <h3 class="project-name" data-en="Healthcare Assessment Platform" data-ar="منصة التقييم الصحي الأولي">Healthcare Assessment Platform</h3>
+                <p class="participant-name" data-en="Mansour Al-Rabie" data-ar="منصور الربيعي">Mansour Al-Rabie</p>
                 <div class="project-domain domain-business">
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                     </svg>
-                    <span data-en="Business" data-ar="الأعمال">Business</span>
+                    <span data-en="healthcare" data-ar="الرعاية الصحية">Healthcare</span>
                 </div>
                 <a href="https://drive.google.com/drive/folders/1vvotDoZE-D117IjMXtKHgRJHZPv9wmcw?usp=sharing" target="_blank" class="view-project-btn">
                     <span data-en="View Project" data-ar="عرض المشروع">View Project</span>
@@ -825,8 +842,8 @@
                     <div class="project-icon">✨</div>
                     <span class="track-badge coders" data-en="Coders" data-ar="مبرمجين">Coders</span>
                 </div>
-                <h3 class="project-name" data-en="Sparkle Tasks" data-ar="مهام متألقة">Sparkle Tasks</h3>
-                <p class="participant-name">Abdullah Alghashmari</p>
+                <h3 class="project-name" data-en="Saudi MindMeet" data-ar="منصة ذكاء الاجتماعات السعودي">Saudi MindMeet</h3>
+                <p class="participant-name" data-ar="عبدالله الغشمري" data-en="Abdullah Alghashmari">Abdullah Alghashmari</p>
                 <div class="project-domain domain-business">
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
@@ -848,7 +865,7 @@
                     <span class="track-badge coders" data-en="Coders" data-ar="مبرمجين">Coders</span>
                 </div>
                 <h3 class="project-name" data-en="Volunteer Work Platform" data-ar="منصة العمل التطوعي">Volunteer Work Platform</h3>
-                <p class="participant-name">بدريه مطلق حسين العتيبي</p>
+                <p class="participant-name" data-en="Badriha Al-Otiybi" data-ar="بدريه العتيبي">Badriha Al-Atiybi</p>
                 <div class="project-domain domain-voluntary-work">
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
@@ -870,7 +887,7 @@
                     <span class="track-badge non-coders" data-en="Non-Coders" data-ar="غير مبرمجين">Non-Coders</span>
                 </div>
                 <h3 class="project-name" data-en="Intel City Watch" data-ar="مراقبة المدينة الذكية">Intel City Watch</h3>
-                <p class="participant-name">Laila M. Alahaideb</p>
+                <p class="participant-name" data-ar="ليلى الاحيدب" data-en="Laila Alahaideb">Laila M. Alahaideb</p>
                 <div class="project-domain domain-smart-cities">
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
@@ -891,13 +908,13 @@
                     <div class="project-icon">👥</div>
                     <span class="track-badge coders" data-en="Coders" data-ar="مبرمجين">Coders</span>
                 </div>
-                <h3 class="project-name" data-en="CT Community" data-ar="مجتمع CT">CT Community</h3>
-                <p class="participant-name">علي بن أحمد عيسى دغري</p>
+                <h3 class="project-name" data-en="Professional Learning Community Platform" data-ar="منصة مجتمعات التعلم المهنية الذكية">Professional Learning Community platform</h3>
+                <p class="participant-name" data-en="Ali Al-Dughri" data-ar="علي الدغري">Ali Al-Dughri</p>
                 <div class="project-domain domain-voluntary-work">
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
                     </svg>
-                    <span data-en="Voluntary Work" data-ar="العمل التطوعي">Voluntary Work</span>
+                    <span data-en="Education" data-ar="التعليم">Education</span>
                 </div>
                 <a href="https://ctcommunity.lovable.app" target="_blank" class="view-project-btn">
                     <span data-en="View Project" data-ar="عرض المشروع">View Project</span>
@@ -913,8 +930,8 @@
                     <div class="project-icon">🏠</div>
                     <span class="track-badge non-coders" data-en="Non-Coders" data-ar="غير مبرمجين">Non-Coders</span>
                 </div>
-                <h3 class="project-name" data-en="PropWise" data-ar="بروب وايز">PropWise</h3>
-                <p class="participant-name">Khalid M. Saeed</p>
+                <h3 class="project-name" data-en="Property Sensing Platform" data-ar="منصة عقاري سينس">Property Sensing Platform</h3>
+                <p class="participant-name" data-en="Khalid Saeed" data-ar="خالد سعيد">Khalid Saeed</p>
                 <div class="project-domain domain-business">
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
@@ -935,13 +952,13 @@
                     <div class="project-icon">🔧</div>
                     <span class="track-badge coders" data-en="Coders" data-ar="مبرمجين">Coders</span>
                 </div>
-                <h3 class="project-name" data-en="Developer Project" data-ar="مشروع تطوير برمجي">Developer Project</h3>
-                <p class="participant-name">Noha Alduaiji</p>
+                <h3 class="project-name" data-en="Smart Study Planner" data-ar="نظام ذكي لتخطيط ومتابعة الدراسة للطلبة">Smart Study Planner</h3>
+                <p class="participant-name" data-ar="نهى الدعيجي" data-en="Noha Alduaiji">Noha Alduaiji</p>
                 <div class="project-domain domain-business">
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                     </svg>
-                    <span data-en="Business" data-ar="الأعمال">Business</span>
+                    <span data-en="Education" data-ar="التعليم">Education</span>
                 </div>
                 <a href="https://drive.google.com/drive/folders/1ztLa0B9JfBh2qHS8GzeJDrk5E4n_RehV?usp=sharing" target="_blank" class="view-project-btn">
                     <span data-en="View Project" data-ar="عرض المشروع">View Project</span>
@@ -957,8 +974,8 @@
                     <div class="project-icon">🩺</div>
                     <span class="track-badge non-coders" data-en="Non-Coders" data-ar="غير مبرمجين">Non-Coders</span>
                 </div>
-                <h3 class="project-name" data-en="CXR Insight" data-ar="رؤية الأشعة السينية">CXR Insight</h3>
-                <p class="participant-name">Abdulaziz Othman</p>
+                <h3 class="project-name" data-en="AI-powered medical image analysis" data-ar="تحليل الأشعة السينية بالذكاء الاصطناعي">AI-powered medical image analysis</h3>
+                <p class="participant-name" data-ar="عبدالعزيز عثمان" data-en="Abdulaziz Othman">Abdulaziz Othman</p>
                 <div class="project-domain domain-healthcare">
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
@@ -980,7 +997,7 @@
                     <span class="track-badge coders" data-en="Coders" data-ar="مبرمجين">Coders</span>
                 </div>
                 <h3 class="project-name" data-en="City-Wide Security Operations" data-ar="عمليات أمن المدينة">City-Wide Security Operations</h3>
-                <p class="participant-name">Laila M. Alahaideb</p>
+                <p class="participant-name" data-ar="ليلى الاحيدب" data-en="Laila M. Alahaideb">Laila Alahaideb</p>
                 <div class="project-domain domain-smart-cities">
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
@@ -1002,7 +1019,7 @@
                     <span class="track-badge non-coders" data-en="Non-Coders" data-ar="غير مبرمجين">Non-Coders</span>
                 </div>
                 <h3 class="project-name" data-en="Safe Prescribe AI" data-ar="وصفة آمنة بالذكاء الاصطناعي">Safe Prescribe AI</h3>
-                <p class="participant-name">Roaa A. Alsofyani</p>
+                <p class="participant-name" data-ar="رؤى السفياني" data-en="Roaa A. Alsofyani">Roaa Alsofyani</p>
                 <div class="project-domain domain-healthcare">
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
@@ -1023,13 +1040,13 @@
                     <div class="project-icon">✅</div>
                     <span class="track-badge non-coders" data-en="Non-Coders" data-ar="غير مبرمجين">Non-Coders</span>
                 </div>
-                <h3 class="project-name" data-en="AI Quality Sync" data-ar="مزامنة الجودة بالذكاء الاصطناعي">AI Quality Sync</h3>
-                <p class="participant-name">رغد عمار علي</p>
+                <h3 class="project-name" data-en="AI Quality Sync" data-ar="نظام الجودة والامتثال الذكي"">AI Quality Sync</h3>
+                <p class="participant-name" data-en="Raghad Ammar" data-ar="رغد عمار ">Raghad Ammar</p>
                 <div class="project-domain domain-business">
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                     </svg>
-                    <span data-en="Business" data-ar="الأعمال">Business</span>
+                    <span data-en="Education" data-ar="التعليم">Education</span>
                 </div>
                 <a href="https://ai-quality-sync.lovable.app" target="_blank" class="view-project-btn">
                     <span data-en="View Project" data-ar="عرض المشروع">View Project</span>
@@ -1045,8 +1062,8 @@
                     <div class="project-icon">🧩</div>
                     <span class="track-badge non-coders" data-en="Non-Coders" data-ar="غير مبرمجين">Non-Coders</span>
                 </div>
-                <h3 class="project-name" data-en="Puzzle Prism Math" data-ar="بازل بريزم للرياضيات">Puzzle Prism Math</h3>
-                <p class="participant-name">Afnan Khalid Mofty</p>
+                <h3 class="project-name" data-en="Math Challenge" data-ar="تحدي الرياضيات">Math Challenge</h3>
+                <p class="participant-name" data-ar="أفنان مفتي" data-en="Afnan Mofty">Afnan Mofty</p>
                 <div class="project-domain domain-education">
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
@@ -1067,13 +1084,13 @@
                     <div class="project-icon">🗺️</div>
                     <span class="track-badge non-coders" data-en="Non-Coders" data-ar="غير مبرمجين">Non-Coders</span>
                 </div>
-                <h3 class="project-name" data-en="Quest Saudi Explorer" data-ar="مستكشف السعودية">Quest Saudi Explorer</h3>
-                <p class="participant-name">Bushra Ali Alshehri</p>
+                <h3 class="project-name" data-en="Tourist Challenge" data-ar="تحدي السائح">Tourist Challenge</h3>
+                <p class="participant-name" data-ar="بشرى الشهري" data-en="Bushra Alshehri">Bushra Alshehri</p>
                 <div class="project-domain domain-education">
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
                     </svg>
-                    <span data-en="Education" data-ar="التعليم">Education</span>
+                    <span data-en="Smart Cities" data-ar="المدن الذكية">Smart Cities</span>
                 </div>
                 <a href="https://quest-saudi-explorer.lovable.app" target="_blank" class="view-project-btn">
                     <span data-en="View Project" data-ar="عرض المشروع">View Project</span>
@@ -1089,12 +1106,12 @@
     <footer>
         <div class="footer-content">
             <div class="footer-logos">
-                <img src="logos/AI Association.png" alt="AI Association" class="footer-logo-img">
-                <img src="logos/Bilytica.png" alt="Bilytica" class="footer-logo-img">
+                <img src="logos/AI Association.png" alt="AI Association" class="footer-logo-img footer-logo-ai">
+                <img src="logos/Bilytica.png" alt="Bilytica" class="footer-logo-img footer-logo-bilytica">
             </div>
             <p class="footer-text">
-                <span data-en="© 2025 Saudi Vibe Coding Program. Powered by" data-ar="© 2025 برنامج سعودي فايب للبرمجة. بدعم من">© 2025 Saudi Vibe Coding Program. Powered by</span> 
-                <a href="#" data-en="AI Association" data-ar="جمعية الذكاء الاصطناعي">AI Association</a> & <a href="#">Bilytica</a>
+                <span data-en="© 2025 Saudi Vibe Coding Program. Powered by" data-ar="© 2025 برنامج البرمجة التوليدية . بدعم من">© 2025 Saudi Vibe Coding Program. Powered by</span> 
+                <a href="#" data-en="AI Association" data-ar="جمعية الذكاء الاصطناعي">AI Association</a> & <a href="#" data-ar="بيليتيكا">Bilytica</a>
             </p>
         </div>
     </footer>
