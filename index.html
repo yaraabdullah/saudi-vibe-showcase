@@ -446,9 +446,9 @@
 
         .card-header {
             display: flex;
-            justify-content: space-between;
+            justify-content: flex-end;
             align-items: flex-start;
-            margin-bottom: 1.5rem;
+            margin-bottom: 1rem;
         }
 
         .track-badge {
@@ -472,15 +472,13 @@
             border: 1px solid rgba(34, 165, 153, 0.3);
         }
 
-        .project-icon {
-            width: 50px;
-            height: 50px;
+        .project-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
             border-radius: 12px;
-            background: rgba(34, 165, 153, 0.15);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+            background: rgba(255, 255, 255, 0.05);
         }
 
         .project-name {
@@ -676,6 +674,10 @@
                 grid-template-columns: 1fr;
             }
 
+            .project-image {
+                height: 180px;
+            }
+
             .filter-buttons {
                 gap: 0.5rem;
             }
@@ -766,6 +768,10 @@
 
             .footer-logos {
                 gap: 1rem;
+            }
+
+            .project-image {
+                height: 150px;
             }
         }
 
@@ -860,8 +866,8 @@
             
             <!-- Project 1: City Access Buddy -->
             <div class="project-card" data-track="non-coders">
+                <img src="logos/مساعد الوصول للمدينة.png" alt="City Access Buddy" class="project-image">
                 <div class="card-header">
-                    <div class="project-icon">🏙️</div>
                     <span class="track-badge non-coders" data-en="Non-Coders" data-ar="غير مبرمجين">Non-Coders</span>
                 </div>
                 <h3 class="project-name" data-en="City Access Buddy" data-ar="مساعد الوصول للمدينة">City Access Buddy</h3>
@@ -880,32 +886,33 @@
                 </a>
             </div>
 
-            <!-- Project 2: Project Management App -->
-            <div class="project-card" data-track="non-coders">
-                <div class="card-header">
-                    <div class="project-icon">📋</div>
-                    <span class="track-badge non-coders" data-en="Non-Coders" data-ar="غير مبرمجين">Non-Coders</span>
-                </div>
-                <h3 class="project-name" data-en="Delivery Route Optimizer" data-ar="تحسين مسارات التوصيل">Delivery Route Optimizer</h3>
-                <p class="participant-name" data-ar="سميح مازن" data-en="Sameeh Mazen Jarrar">Sameeh Mazen</p>
-                <div class="project-domain domain-business">
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                    </svg>
-                    <span data-en="Business" data-ar="الأعمال">Business</span>
-                </div>
-                <a href="https://lovable.dev/projects/070453b6-95d5-4196-8db9-818b18afa2bf" target="_blank" class="view-project-btn">
-                    <span data-en="View Project" data-ar="عرض المشروع">View Project</span>
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                    </svg>
-                </a>
-            </div>
+                        <!-- Project 10: CXR Insight -->
+                        <div class="project-card" data-track="non-coders">
+                            <img src="logos/تحليل الأشعة السينية بالذكاء الاصطناعي.png" alt="AI-powered medical image analysis" class="project-image">
+                            <div class="card-header">
+                                <span class="track-badge non-coders" data-en="Non-Coders" data-ar="غير مبرمجين">Non-Coders</span>
+                            </div>
+                            <h3 class="project-name" data-en="AI-powered medical image analysis" data-ar="تحليل الأشعة السينية بالذكاء الاصطناعي">AI-powered medical image analysis</h3>
+                            <p class="participant-name" data-ar="عبدالعزيز عثمان" data-en="Abdulaziz Othman">Abdulaziz Othman</p>
+                            <div class="project-domain domain-healthcare">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                                </svg>
+                                <span data-en="Healthcare" data-ar="الرعاية الصحية">Healthcare</span>
+                            </div>
+                            <a href="https://lovable-cxr-insight.lovable.app" target="_blank" class="view-project-btn">
+                                <span data-en="View Project" data-ar="عرض المشروع">View Project</span>
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                                </svg>
+                            </a>
+                        </div>
 
-            <!-- Project 3: Developer Project -->
+
+                                    <!-- Project 3: Developer Project -->
             <div class="project-card" data-track="coders">
+                <img src="logos/منصة التقييم الصحي الأولي.png" alt="Healthcare Assessment Platform" class="project-image">
                 <div class="card-header">
-                    <div class="project-icon">💻</div>
                     <span class="track-badge coders" data-en="Coders" data-ar="مبرمجين">Coders</span>
                 </div>
                 <h3 class="project-name" data-en="Healthcare Assessment Platform" data-ar="منصة التقييم الصحي الأولي">Healthcare Assessment Platform</h3>
@@ -924,21 +931,43 @@
                 </a>
             </div>
 
-            <!-- Project 4: Sparkle Tasks -->
-            <div class="project-card" data-track="coders">
+                        <!-- Project 15: Quest Saudi Explorer -->
+                        <div class="project-card" data-track="non-coders">
+                            <img src="logos/تحدي السائح.png" alt="Tourist Challenge" class="project-image">
+                            <div class="card-header">
+                                <span class="track-badge non-coders" data-en="Non-Coders" data-ar="غير مبرمجين">Non-Coders</span>
+                            </div>
+                            <h3 class="project-name" data-en="Tourist Challenge" data-ar="تحدي السائح">Tourist Challenge</h3>
+                            <p class="participant-name" data-ar="بشرى الشهري" data-en="Bushra Alshehri">Bushra Alshehri</p>
+                            <div class="project-domain domain-education">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+                                </svg>
+                                <span data-en="Smart Cities" data-ar="المدن الذكية">Smart Cities</span>
+                            </div>
+                            <a href="https://quest-saudi-explorer.lovable.app" target="_blank" class="view-project-btn">
+                                <span data-en="View Project" data-ar="عرض المشروع">View Project</span>
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                                </svg>
+                            </a>
+                        </div>
+
+                                    <!-- Project 14: Puzzle Prism Math -->
+            <div class="project-card" data-track="non-coders">
+                <img src="logos/تحدي الرياضيات.png" alt="Math Challenge" class="project-image">
                 <div class="card-header">
-                    <div class="project-icon">✨</div>
-                    <span class="track-badge coders" data-en="Coders" data-ar="مبرمجين">Coders</span>
+                    <span class="track-badge non-coders" data-en="Non-Coders" data-ar="غير مبرمجين">Non-Coders</span>
                 </div>
-                <h3 class="project-name" data-en="Saudi MindMeet" data-ar="منصة ذكاء الاجتماعات السعودي">Saudi MindMeet</h3>
-                <p class="participant-name" data-ar="عبدالله الغشمري" data-en="Abdullah Alghashmari">Abdullah Alghashmari</p>
-                <div class="project-domain domain-business">
+                <h3 class="project-name" data-en="Math Challenge" data-ar="تحدي الرياضيات">Math Challenge</h3>
+                <p class="participant-name" data-ar="أفنان مفتي" data-en="Afnan Mofty">Afnan Mofty</p>
+                <div class="project-domain domain-education">
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
                     </svg>
-                    <span data-en="Business" data-ar="الأعمال">Business</span>
+                    <span data-en="Education" data-ar="التعليم">Education</span>
                 </div>
-                <a href="https://demo-sparkle-tasks.lovable.app" target="_blank" class="view-project-btn">
+                <a href="https://puzzle-prism-math.lovable.app/" target="_blank" class="view-project-btn">
                     <span data-en="View Project" data-ar="عرض المشروع">View Project</span>
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
@@ -946,32 +975,80 @@
                 </a>
             </div>
 
-            <!-- Project 5: Volunteer Work Platform -->
-            <div class="project-card" data-track="coders">
+                        <!-- Project 7: CT Community -->
+                        <div class="project-card" data-track="coders">
+                            <img src="logos/منصة مجتمعات التعلم المهنية الذكية.png" alt="Professional Learning Community Platform" class="project-image">
+                            <div class="card-header">
+                                <span class="track-badge coders" data-en="Coders" data-ar="مبرمجين">Coders</span>
+                            </div>
+                            <h3 class="project-name" data-en="Professional Learning Community Platform" data-ar="منصة مجتمعات التعلم المهنية الذكية">Professional Learning Community platform</h3>
+                            <p class="participant-name" data-en="Ali Al-Dughri" data-ar="علي الدغري">Ali Al-Dughri</p>
+                            <div class="project-domain domain-voluntary-work">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                                </svg>
+                                <span data-en="Education" data-ar="التعليم">Education</span>
+                            </div>
+                            <a href="https://ctcommunity.lovable.app" target="_blank" class="view-project-btn">
+                                <span data-en="View Project" data-ar="عرض المشروع">View Project</span>
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                                </svg>
+                            </a>
+                        </div>
+
+                                    <!-- Project 13: AI Quality Sync -->
+            <div class="project-card" data-track="non-coders">
+                <img src="logos/نظام الجودة والامتثال الذكي.png" alt="AI Quality Sync" class="project-image">
                 <div class="card-header">
-                    <div class="project-icon">🤝</div>
-                    <span class="track-badge coders" data-en="Coders" data-ar="مبرمجين">Coders</span>
+                    <span class="track-badge non-coders" data-en="Non-Coders" data-ar="غير مبرمجين">Non-Coders</span>
                 </div>
-                <h3 class="project-name" data-en="Volunteer Work Platform" data-ar="منصة العمل التطوعي">Volunteer Work Platform</h3>
-                <p class="participant-name" data-en="Badriha Al-Otiybi" data-ar="بدريه العتيبي">Badriha Al-Atiybi</p>
-                <div class="project-domain domain-voluntary-work">
+                <h3 class="project-name" data-en="AI Quality Sync" data-ar="نظام الجودة والامتثال الذكي"">AI Quality Sync</h3>
+                <p class="participant-name" data-en="Raghad Ammar" data-ar="رغد عمار ">Raghad Ammar</p>
+                <div class="project-domain domain-business">
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                     </svg>
-                    <span data-en="Voluntary Work" data-ar="العمل التطوعي">Voluntary Work</span>
+                    <span data-en="Education" data-ar="التعليم">Education</span>
                 </div>
-                <span class="view-project-btn disabled">
-                    <span data-en="Project Pending" data-ar="المشروع قيد الانتظار">Project Pending</span>
+                <a href="https://ai-quality-sync.lovable.app" target="_blank" class="view-project-btn">
+                    <span data-en="View Project" data-ar="عرض المشروع">View Project</span>
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
                     </svg>
-                </span>
+                </a>
             </div>
+
+
+            <!-- Project 2: Project Management App -->
+            <div class="project-card" data-track="non-coders">
+                <img src="logos/تحسين مسارات التوصيل.png" alt="Delivery Route Optimizer" class="project-image">
+               <div class="card-header">
+                    <span class="track-badge non-coders" data-en="Non-Coders" data-ar="غير مبرمجين">Non-Coders</span>
+                </div>
+                <h3 class="project-name" data-en="Delivery Route Optimizer" data-ar="تحسين مسارات التوصيل">Delivery Route Optimizer</h3>
+                <p class="participant-name" data-ar="سميح مازن" data-en="Sameeh Mazen Jarrar">Sameeh Mazen</p>
+                <div class="project-domain domain-business">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                    </svg>
+                    <span data-en="Business" data-ar="الأعمال">Business</span>
+                </div>
+                <a href="https://dash-ship-route.lovable.app" target="_blank" class="view-project-btn">
+                    <span data-en="View Project" data-ar="عرض المشروع">View Project</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                    </svg>
+                </a>
+            </div>
+
+
+
 
             <!-- Project 6: Intel City Watch -->
             <div class="project-card" data-track="non-coders">
+                <img src="logos/مراقبة المدينة الذكية.png" alt="Intel City Watch" class="project-image">
                 <div class="card-header">
-                    <div class="project-icon">👁️</div>
                     <span class="track-badge non-coders" data-en="Non-Coders" data-ar="غير مبرمجين">Non-Coders</span>
                 </div>
                 <h3 class="project-name" data-en="Intel City Watch" data-ar="مراقبة المدينة الذكية">Intel City Watch</h3>
@@ -990,32 +1067,34 @@
                 </a>
             </div>
 
-            <!-- Project 7: CT Community -->
-            <div class="project-card" data-track="coders">
-                <div class="card-header">
-                    <div class="project-icon">👥</div>
-                    <span class="track-badge coders" data-en="Coders" data-ar="مبرمجين">Coders</span>
-                </div>
-                <h3 class="project-name" data-en="Professional Learning Community Platform" data-ar="منصة مجتمعات التعلم المهنية الذكية">Professional Learning Community platform</h3>
-                <p class="participant-name" data-en="Ali Al-Dughri" data-ar="علي الدغري">Ali Al-Dughri</p>
-                <div class="project-domain domain-voluntary-work">
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
-                    </svg>
-                    <span data-en="Education" data-ar="التعليم">Education</span>
-                </div>
-                <a href="https://ctcommunity.lovable.app" target="_blank" class="view-project-btn">
-                    <span data-en="View Project" data-ar="عرض المشروع">View Project</span>
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                    </svg>
-                </a>
-            </div>
+                        <!-- Project 4: Sparkle Tasks -->
+                        <div class="project-card" data-track="coders">
+                            <img src="logos/منصة ذكاء الاجتماعات السعودي.png" alt="Saudi MindMeet" class="project-image">
+                            <div class="card-header">
+                                <span class="track-badge coders" data-en="Coders" data-ar="مبرمجين">Coders</span>
+                            </div>
+                            <h3 class="project-name" data-en="Saudi MindMeet" data-ar="منصة ذكاء الاجتماعات السعودي">Saudi MindMeet</h3>
+                            <p class="participant-name" data-ar="عبدالله الغشمري" data-en="Abdullah Alghashmari">Abdullah Alghashmari</p>
+                            <div class="project-domain domain-business">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                                </svg>
+                                <span data-en="Business" data-ar="الأعمال">Business</span>
+                            </div>
+                            <a href="https://demo-sparkle-tasks.lovable.app" target="_blank" class="view-project-btn">
+                                <span data-en="View Project" data-ar="عرض المشروع">View Project</span>
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                                </svg>
+                            </a>
+                        </div>
+
+
 
             <!-- Project 8: PropWise -->
             <div class="project-card" data-track="non-coders">
+                <img src="logos/منصة عقاري سينس.png" alt="Property Sensing Platform" class="project-image">
                 <div class="card-header">
-                    <div class="project-icon">🏠</div>
                     <span class="track-badge non-coders" data-en="Non-Coders" data-ar="غير مبرمجين">Non-Coders</span>
                 </div>
                 <h3 class="project-name" data-en="Property Sensing Platform" data-ar="منصة عقاري سينس">Property Sensing Platform</h3>
@@ -1036,8 +1115,8 @@
 
             <!-- Project 9: Developer Project (Noha) -->
             <div class="project-card" data-track="coders">
+                <img src="logos/نظام ذكي لتخطيط ومتابعة الدراسة للطلبة.png" alt="Smart Study Planner" class="project-image">
                 <div class="card-header">
-                    <div class="project-icon">🔧</div>
                     <span class="track-badge coders" data-en="Coders" data-ar="مبرمجين">Coders</span>
                 </div>
                 <h3 class="project-name" data-en="Smart Study Planner" data-ar="نظام ذكي لتخطيط ومتابعة الدراسة للطلبة">Smart Study Planner</h3>
@@ -1056,54 +1135,12 @@
                 </a>
             </div>
 
-            <!-- Project 10: CXR Insight -->
-            <div class="project-card" data-track="non-coders">
-                <div class="card-header">
-                    <div class="project-icon">🩺</div>
-                    <span class="track-badge non-coders" data-en="Non-Coders" data-ar="غير مبرمجين">Non-Coders</span>
-                </div>
-                <h3 class="project-name" data-en="AI-powered medical image analysis" data-ar="تحليل الأشعة السينية بالذكاء الاصطناعي">AI-powered medical image analysis</h3>
-                <p class="participant-name" data-ar="عبدالعزيز عثمان" data-en="Abdulaziz Othman">Abdulaziz Othman</p>
-                <div class="project-domain domain-healthcare">
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
-                    </svg>
-                    <span data-en="Healthcare" data-ar="الرعاية الصحية">Healthcare</span>
-                </div>
-                <a href="https://lovable-cxr-insight.lovable.app" target="_blank" class="view-project-btn">
-                    <span data-en="View Project" data-ar="عرض المشروع">View Project</span>
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                    </svg>
-                </a>
-            </div>
 
-            <!-- Project 11: City-Wide Security Operations -->
-            <div class="project-card" data-track="coders">
-                <div class="card-header">
-                    <div class="project-icon">🔐</div>
-                    <span class="track-badge coders" data-en="Coders" data-ar="مبرمجين">Coders</span>
-                </div>
-                <h3 class="project-name" data-en="City-Wide Security Operations" data-ar="عمليات أمن المدينة">City-Wide Security Operations</h3>
-                <p class="participant-name" data-ar="ليلى الاحيدب" data-en="Laila M. Alahaideb">Laila Alahaideb</p>
-                <div class="project-domain domain-smart-cities">
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
-                    </svg>
-                    <span data-en="Smart Cities" data-ar="المدن الذكية">Smart Cities</span>
-                </div>
-                <a href="https://city-wide-security-operations.vercel.app/" target="_blank" class="view-project-btn">
-                    <span data-en="View Project" data-ar="عرض المشروع">View Project</span>
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                    </svg>
-                </a>
-            </div>
 
             <!-- Project 12: Safe Prescribe AI -->
             <div class="project-card" data-track="non-coders">
+                <div class="project-image" style="background: linear-gradient(135deg, rgba(239, 68, 68, 0.2), rgba(34, 165, 153, 0.2)); display: flex; align-items: center; justify-content: center; font-size: 3rem;">💊</div>
                 <div class="card-header">
-                    <div class="project-icon">💊</div>
                     <span class="track-badge non-coders" data-en="Non-Coders" data-ar="غير مبرمجين">Non-Coders</span>
                 </div>
                 <h3 class="project-name" data-en="Safe Prescribe AI" data-ar="وصفة آمنة بالذكاء الاصطناعي">Safe Prescribe AI</h3>
@@ -1122,71 +1159,10 @@
                 </a>
             </div>
 
-            <!-- Project 13: AI Quality Sync -->
-            <div class="project-card" data-track="non-coders">
-                <div class="card-header">
-                    <div class="project-icon">✅</div>
-                    <span class="track-badge non-coders" data-en="Non-Coders" data-ar="غير مبرمجين">Non-Coders</span>
-                </div>
-                <h3 class="project-name" data-en="AI Quality Sync" data-ar="نظام الجودة والامتثال الذكي"">AI Quality Sync</h3>
-                <p class="participant-name" data-en="Raghad Ammar" data-ar="رغد عمار ">Raghad Ammar</p>
-                <div class="project-domain domain-business">
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                    </svg>
-                    <span data-en="Education" data-ar="التعليم">Education</span>
-                </div>
-                <a href="https://ai-quality-sync.lovable.app" target="_blank" class="view-project-btn">
-                    <span data-en="View Project" data-ar="عرض المشروع">View Project</span>
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                    </svg>
-                </a>
-            </div>
 
-            <!-- Project 14: Puzzle Prism Math -->
-            <div class="project-card" data-track="non-coders">
-                <div class="card-header">
-                    <div class="project-icon">🧩</div>
-                    <span class="track-badge non-coders" data-en="Non-Coders" data-ar="غير مبرمجين">Non-Coders</span>
-                </div>
-                <h3 class="project-name" data-en="Math Challenge" data-ar="تحدي الرياضيات">Math Challenge</h3>
-                <p class="participant-name" data-ar="أفنان مفتي" data-en="Afnan Mofty">Afnan Mofty</p>
-                <div class="project-domain domain-education">
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
-                    </svg>
-                    <span data-en="Education" data-ar="التعليم">Education</span>
-                </div>
-                <a href="https://puzzle-prism-math.lovable.app/" target="_blank" class="view-project-btn">
-                    <span data-en="View Project" data-ar="عرض المشروع">View Project</span>
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                    </svg>
-                </a>
-            </div>
 
-            <!-- Project 15: Quest Saudi Explorer -->
-            <div class="project-card" data-track="non-coders">
-                <div class="card-header">
-                    <div class="project-icon">🗺️</div>
-                    <span class="track-badge non-coders" data-en="Non-Coders" data-ar="غير مبرمجين">Non-Coders</span>
-                </div>
-                <h3 class="project-name" data-en="Tourist Challenge" data-ar="تحدي السائح">Tourist Challenge</h3>
-                <p class="participant-name" data-ar="بشرى الشهري" data-en="Bushra Alshehri">Bushra Alshehri</p>
-                <div class="project-domain domain-education">
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
-                    </svg>
-                    <span data-en="Smart Cities" data-ar="المدن الذكية">Smart Cities</span>
-                </div>
-                <a href="https://quest-saudi-explorer.lovable.app" target="_blank" class="view-project-btn">
-                    <span data-en="View Project" data-ar="عرض المشروع">View Project</span>
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                    </svg>
-                </a>
-            </div>
+
+
 
         </div>
     </section>
